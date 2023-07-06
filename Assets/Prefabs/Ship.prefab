@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 5615950590408712405}
   - component: {fileID: 3306327439991846340}
   - component: {fileID: 5251621980167578076}
+  - component: {fileID: 1576042685}
+  - component: {fileID: 1576042690}
   m_Layer: 0
   m_Name: Ship
   m_TagString: Untagged
@@ -138,3 +140,31 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.5648089, y: 0.25236392}
   m_EdgeRadius: 0
+--- !u!114 &1576042685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4126293219103013749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c3a990d8fc04fd42aa778338afe7b2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 1902514670945359060, guid: e7ae94db0b7a9e94c85ad79efe03c9f8, type: 3}
+  ObjectPool: {fileID: 1576042690}
+--- !u!114 &1576042690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4126293219103013749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8baef5929889b2047b871221d65b50d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectPrefab: {fileID: 1902514670945359060, guid: e7ae94db0b7a9e94c85ad79efe03c9f8, type: 3}
+  poolSize: 5

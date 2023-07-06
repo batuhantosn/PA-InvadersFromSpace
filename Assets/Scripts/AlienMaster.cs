@@ -6,11 +6,11 @@ public class AlienMaster : MonoBehaviour
 {
     [SerializeField] private ObjectPool ObjectPool = null;
     public GameObject bulletPrefab;
-    private Vector3 hMoveDistance = new Vector3(0.5f,0,0);
+    private Vector3 hMoveDistance = new Vector3(0.05f,0,0);
     private Vector3 vMoveDistance = new Vector3(0,0.15f,0);
 
-    private const float MAX_LEFT = -2f;
-    private const float MAX_RIGHT = 2f;
+    private const float MAX_LEFT = -3.3f;
+    private const float MAX_RIGHT = 3.3f;
     public static List<GameObject> allAliens = new List<GameObject>();
 
     private bool movingRight;
@@ -20,11 +20,13 @@ public class AlienMaster : MonoBehaviour
     private float shootTimer = 3f;
     private const float ShootTime = 3f;
     public GameObject motherShipPrefab;
-    private Vector3 motherShipSpawnPos = new Vector3(5f,5f,0);
+    private Vector3 motherShipSpawnPos = new Vector3(5f,5.75f,0);
 
     private float motherShipTimer = 60f;
     private const float MOTHERSHIP_MIN = 15f;
     private const float MOTHERSHIP_MAX = 60f;
+    private const float START_Y = 1.7f;
+    private bool entering = true;
 
     void Start()
     {
@@ -36,7 +38,18 @@ public class AlienMaster : MonoBehaviour
 
     void Update()
     {
-        if (moveTimer <= 0)
+
+        if (entering)
+        {
+            transform.Translate(Vector2.down*Time.deltaTime*10);
+            if (transform.position.y <= START_Y)
+            {
+                entering = false;
+            }
+        }
+        else
+        {
+            if (moveTimer <= 0)
         {
             MoveEnemies();
         }
@@ -51,6 +64,8 @@ public class AlienMaster : MonoBehaviour
         moveTimer -= Time.deltaTime;
         shootTimer -= Time.deltaTime;
         motherShipTimer -= Time.deltaTime;
+        }
+        
     }
 
     private void MoveEnemies(){
@@ -98,7 +113,7 @@ public class AlienMaster : MonoBehaviour
 
     private float GetMoveSpeed(){
         float f = allAliens.Count * moveTime;
-        if (f< MAX_MOVESPEED)
+        if (f < MAX_MOVESPEED)
         {
             return MAX_MOVESPEED;
         }else{
