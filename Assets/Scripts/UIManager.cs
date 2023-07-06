@@ -50,7 +50,12 @@ public class UIManager : MonoBehaviour
         instance.scoreText.text = instance.score.ToString("000,000");
     }
     public static void UpdateHighScore(){
-        //TODO
+        instance.highScoreText.text = PlayerPrefs.GetInt("HighScore").ToString();
+        if (instance.score > instance.highscore)
+        {
+            instance.highscore = instance.score;
+            PlayerPrefs.SetInt("HighScore",instance.highscore);
+        }
     }
     public static void UpdateWave(){
         instance.wave++;

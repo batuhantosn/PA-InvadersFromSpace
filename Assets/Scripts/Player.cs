@@ -25,6 +25,7 @@ public class Player : MonoBehaviour
         transform.position = startPos;
         UIManager.UpdateHealthBar(shipStats.currentHealth);
         UIManager.UpdateLives(shipStats.currenLifes);
+        UIManager.UpdateHighScore();
     }
 
 
@@ -116,6 +117,8 @@ public class Player : MonoBehaviour
             UIManager.UpdateLives(shipStats.currenLifes);
             if(shipStats.currenLifes <=0){
             Debug.Log("Game Over");
+            UIManager.UpdateHighScore();
+            //TODO RESTART SCENE
             }
             else{
             Debug.Log("Respawn");
