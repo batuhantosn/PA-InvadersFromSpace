@@ -85,7 +85,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8baef5929889b2047b871221d65b50d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectPrefab: {fileID: 3385452049159422355, guid: d749d23ea5d5b394c86c9de0f164fac1, type: 3}
+  objectPrefab:
+  - {fileID: 3385452049159422355, guid: d749d23ea5d5b394c86c9de0f164fac1, type: 3}
   poolSize: 2
 --- !u!1001 &4610294831382932987
 PrefabInstance:
