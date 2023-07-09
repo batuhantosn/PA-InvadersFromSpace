@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using DG.Tweening;
 
 public class Player : MonoBehaviour
 {
@@ -23,7 +24,7 @@ public class Player : MonoBehaviour
     private void Start() {
         shipStats.currentHealth = shipStats.maxHealth;
         shipStats.currenLifes = shipStats.maxLife;
-        transform.position = startPos;
+        transform.DOMove(startPos,1f).SetEase(Ease.Linear);
         UIManager.UpdateHealthBar(shipStats.currentHealth);
         UIManager.UpdateLives(shipStats.currenLifes);
         UIManager.UpdateHighScore();
@@ -105,7 +106,7 @@ public class Player : MonoBehaviour
         transform.position = offScreenPos;
         yield return new WaitForSeconds(2);
         shipStats.currentHealth = shipStats.maxHealth;
-        transform.position = startPos;
+        transform.DOMove(startPos,1f).SetEase(Ease.Linear);
         UIManager.UpdateHealthBar(shipStats.currentHealth);
     }
     public void TakeDamage(){

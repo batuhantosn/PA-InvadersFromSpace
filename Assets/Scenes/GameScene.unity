@@ -192,7 +192,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 519420031}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -949,7 +949,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 557383958}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 360.98517, y: 1223.9617, z: -0.9630719}
+  m_LocalPosition: {x: 360.98517, y: 1223.9617, z: -0.9630661}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -972,9 +972,8 @@ MonoBehaviour:
   DoubleBulletBtn: {fileID: 1771051276}
   FireRateOneBtn: {fileID: 685924088}
   FireRateTwoBtn: {fileID: 1886881575}
-  ShopBtn: {fileID: 0}
-  shopPanel: {fileID: 0}
-  menuMoveSpeed: 0
+  ShopBtn: {fileID: 1066785708}
+  shopPanel: {fileID: 859658260}
 --- !u!1 &630387755
 GameObject:
   m_ObjectHideFlags: 0
@@ -1356,10 +1355,10 @@ RectTransform:
   m_Father: {fileID: 134859862}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 96, y: 544}
-  m_SizeDelta: {x: -480.2225, y: -1069.0142}
+  m_AnchorMin: {x: 0.42000002, y: 0.7417762}
+  m_AnchorMax: {x: 0.8212501, y: 0.8883105}
+  m_AnchoredPosition: {x: 498.6944, y: -2.24646}
+  m_SizeDelta: {x: -2.611206, y: 406.49292}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &859658261
 MonoBehaviour:
@@ -1729,7 +1728,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -398.52582}
+  m_AnchoredPosition: {x: 0, y: -398.52588}
   m_SizeDelta: {x: 0, y: -797.0516}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1054705960
@@ -2025,7 +2024,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1066785709}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 557383961}
+        m_TargetAssemblyTypeName: Shop, Assembly-CSharp
+        m_MethodName: ShopOpenClose
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1066785709
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2536,7 +2547,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 59561790019196045, guid: 19b8a2a26fc8ec34491db785ca89b015, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -6.5
+      value: -20
       objectReference: {fileID: 0}
     - target: {fileID: 59561790019196045, guid: 19b8a2a26fc8ec34491db785ca89b015, type: 3}
       propertyPath: m_LocalPosition.z

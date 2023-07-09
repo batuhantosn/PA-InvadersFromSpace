@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class AlienMaster : MonoBehaviour
 {
@@ -41,7 +42,8 @@ public class AlienMaster : MonoBehaviour
 
         if (entering)
         {
-            transform.Translate(Vector2.down*Time.deltaTime*10);
+            transform.DOMove(new Vector3(0,1.67f,0),1f).SetEase(Ease.Linear);
+            //transform.Translate(Vector2.down*Time.deltaTime*10);
             if (transform.position.y <= START_Y)
             {
                 entering = false;
