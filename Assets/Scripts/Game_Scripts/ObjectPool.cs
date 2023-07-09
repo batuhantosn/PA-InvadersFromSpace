@@ -27,7 +27,6 @@ public class ObjectPool : MonoBehaviour
 
     public void BulletType(int t){
         pooledObjects.Clear();
-        Debug.Log("object clear");
         pooledObjects = new Queue<GameObject>();
         for (int i = 0; i < poolSize; i++)
         {
