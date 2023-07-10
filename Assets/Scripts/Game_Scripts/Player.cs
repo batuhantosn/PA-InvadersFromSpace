@@ -18,8 +18,10 @@ public class Player : MonoBehaviour
     public ShipStats shipStats;
     private Vector2 offScreenPos = new Vector2(0,-20f);
     private Vector2 startPos = new Vector2(0,-6.5f);
-
     private float dirX;
+
+    public AudioClip shootSound;
+    private AudioSource aSource;
 
     private void Start() {
         shipStats.currentHealth = shipStats.maxHealth;
@@ -28,6 +30,7 @@ public class Player : MonoBehaviour
         UIManager.UpdateHealthBar(shipStats.currentHealth);
         UIManager.UpdateLives(shipStats.currenLifes);
         UIManager.UpdateHighScore();
+        aSource = GetComponent<AudioSource>();
     }
 
 
@@ -91,6 +94,7 @@ public class Player : MonoBehaviour
         isShooting = true;
         GameObject obj = ObjectPool.GetPooledObject();
         obj.transform.position = gameObject.transform.position;
+        aSource.PlayOneShot(shootSound,1f);
         yield return new WaitForSeconds(ShipStats.fireRate);
         isShooting = false;
     }
